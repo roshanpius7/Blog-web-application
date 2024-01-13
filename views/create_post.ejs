@@ -1,0 +1,26 @@
+<%- include("./partials/header.ejs")%>
+
+
+<div class="container form_width">
+    <div class="form">
+        <form  action="/submit"  method="post">
+            <label for="author" > Name :
+            </label>
+            <input type="text" name="name" size="60"  required/>
+            <label for="title"> Title :</label>
+            <input type="text" name="title" size="60"  required/>
+            <label for="blog"> Blog :</label>
+            <textarea name="blog_text" id="blog_text" rows="8" cols="63" >
+                
+            </textarea>
+
+            <input type="submit"  value="Post"/>
+
+
+
+
+        </form>
+    </div>
+   
+</div>
+<%- include("./partials/footer.ejs") %>

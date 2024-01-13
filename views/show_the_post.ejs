@@ -1,0 +1,43 @@
+<%- include("./partials/header.ejs")%>
+
+
+<%if(posts.length == 0){ %>
+    <!-- <h1> OOps ! No Posts Found</h1> -->
+    <h2 class="no_blog"> Oops ! No Blogs Found</h2>
+
+
+        
+<% } else { %>
+
+    
+        <% posts.forEach((post,index )=>{ %>
+
+      
+          
+        <div class = "container blog_space ">    
+          
+          <form  action="/update" method="post">
+
+            <h3> "  <%= post.title %> "</h3>
+            <input type="hidden" name ="title" value="<%= post.title %>">
+
+            <h5> written by  <%= post.author_name %> , </h5>
+            <input type="hidden" name="name" value="<%= post.author_name %>">
+              
+
+            <h6><%= post.blog_text %></h6>
+            <input type="hidden" name="blog_text" value="<%= post.blog_text  %>">
+
+            <input type="hidden" name="idx" value="<%=index%>">
+            <button type="submit" class="btn my-2 btn-dark" value="Update" > Update </button>
+            
+          </form>
+</div>
+    
+    
+    <%   })%>
+
+
+<%  } %>
+
+<%- include("./partials/footer.ejs") %>
